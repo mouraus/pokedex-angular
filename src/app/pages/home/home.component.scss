@@ -1,0 +1,18 @@
+.custom--container--main {
+    color: white;
+    // background-color:aqua;
+    min-height: 100vh;
+}
+
+.custom--cards--container {
+    min-height: 80vh;
+    // background-color: white;
+    width: 60%;
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+
+}
