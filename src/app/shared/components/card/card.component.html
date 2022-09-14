@@ -1,12 +1,24 @@
-<div class="container-fluid custom--card">
-    <div class="description">
-      <h1>Bulbasaur</h1>
-      <div class="container--skils">
-        <span class="skill">Skill</span>
-        <span class="skill">Skill</span>
+<app-search-input (emitSearch)="getSearch($event)"></app-search-input>
+
+<div class="custom--cards--container" (emitSearch)="getSearch($event)">
+
+  <ng-template ngIf="pokemons"  ngFor let-pokemon [ngForOf]="pokemons">
+
+    <a [routerLink]="['pokemon',pokemon.status.id]" *ngIf="pokemon.status" class="container-fluid custom--card">
+
+      <div class="description">
+
+        <h2>{{pokemon.name}}</h2>
+
+        <div class="container--skils">
+          <span *ngFor="let poke of pokemon.status.abilities" class="skill">{{poke.ability.name}}</span>
+        </div>
+
+      </div>
+      <div *ngIf="pokemon.status.sprites.front_default" class="img--pokemon">
+        <img src="{{pokemon.status.sprites.front_default}}" class="img-fluid" alt="...">
       </div>
 
-    </div>
-    <img src="../../../../assets/pokemon.svg" class="img-fluid" alt="...">
-
-  </div>
+    </a>
+  </ng-template>
+</div>

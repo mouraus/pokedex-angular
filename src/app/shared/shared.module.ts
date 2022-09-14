@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { CardComponent } from './components/card/card.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,11 +12,14 @@ import { CardComponent } from './components/card/card.component';
     CardComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
+
   ],
   exports:[
     SearchInputComponent,
-    CardComponent
+    CardComponent,
+    RouterModule
 
   ]
 })
